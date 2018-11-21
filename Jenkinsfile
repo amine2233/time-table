@@ -15,7 +15,6 @@ node('mac-mini-slave') {
         ])
 
         // Build and Test
-        sh 'xcode-select --install'
         sh 'xcodebuild -scheme "TimeTable" -configuration "Debug" build DEVELOPMENT_TEAM=amine.mbe@gmail.com test -destination "platform=iOS Simulator,name=iPhone 8 Plus,OS=12.1" -enableCodeCoverage YES'
         // | /usr/local/bin/xcpretty --report junit
         // Publish test restults.
